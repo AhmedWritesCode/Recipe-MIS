@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Recipe</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style="background-image: url('6.png'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
+    <?php include('header.php'); ?>
+    <main>
+        <h1 style="color: rgb(87, 196, 255); background-color: #e2f9ff; font-family: 'Comic Sans MS', cursive, sans-serif; display: inline-block; padding: 10px; border-radius: 25px;">Add New Recipe</h1>
+        <form action="add_recipe.php" method="POST">
+            <label for="title">Recipe Title:</label>
+            <input type="text" id="title" name="title" required>
+            <label for="category">Category:</label>
+            <input type="text" id="category" name="category" required>
+            <label for="ingredients">Ingredients:</label>
+            <textarea id="ingredients" name="ingredients" required></textarea>
+            <label for="steps">Steps:</label>
+            <textarea id="steps" name="steps" required></textarea>
+            <button type="submit">Add Recipe</button>
+        </form>
+    </main>
+    <?php include('footer.php'); ?>
+</body>
+</html>
+

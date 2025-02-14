@@ -1,0 +1,91 @@
+/* General Styles */
+body {
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: large;
+}
+
+main {
+  padding: 20px;
+  text-align: center;
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+input, textarea {
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 80%;
+  max-width: 300px;
+}
+
+button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #008CBA;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: #007B9A;
+}
+
+/* Recipe Card Styles */
+#recipes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.recipe-card {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 20px;
+  width: 80%;
+  max-width: 300px;
+  text-align: left;
+  background-color: #fdfddc;
+}
+
+.recipe-card h2 {
+  margin-top: 0;
+  background-color: #bfe3ff;
+  text-align: center;
+  color: rgb(255, 123, 108);
+ font-family: Comic Sans MS;
+}
+
+.recipe-card .btn {
+  display: block;
+  margin: 10px 0;
+  background-color: #659334;
+}
+

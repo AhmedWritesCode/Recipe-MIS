@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Recipe Management System</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+        }
+
+        header {
+            background: #ff6347;
+            color: #ffffff;
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+
+        nav {
+            background: #ffa07a;
+            padding: 0.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #ff6347;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        h1, h2, h3 {
+            color: #ff6347;
+        }
+
+        section {
+            margin-bottom: 2rem;
+            background: #ffffff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        section:hover {
+            transform: scale(1.02);
+        }
+
+        footer {
+            background: #ff6347;
+            color: #ffffff;
+            text-align: center;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        ul, ol {
+            margin: 1rem 0;
+            padding: 0 1.5rem;
+        }
+
+        p {
+            margin: 1rem 0;
+        }
+
+        .accordion {
+            background-color: #ffa07a;
+            color: #ffffff;
+            cursor: pointer;
+            padding: 1rem;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            transition: 0.4s;
+            font-weight: bold;
+        }
+
+        .active, .accordion:hover {
+            background-color: #ff6347;
+        }
+
+        .panel {
+            padding: 0 1.5rem;
+            display: none;
+            background-color: white;
+            overflow: hidden;
+        }
+
+        .panel p {
+            margin: 0.5rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo2.png" alt="logo" width="100px" height="100px" style="border-radius: 50%; margin-right: 1rem;">
+        <h1>Web-based Healthy Recipe Management System</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#user-manual">User Manual</a></li>
+            <li><a href="#report">Report's List of Contents</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="overview">
+            <button class="accordion">Project Overview</button>
+            <div class="panel">
+                <p>A secure web platform for users to manage healthy recipes. Users can create, view, edit, and delete recipes with ingredients, steps, and categories. Sorting, filtering, and responsive design ensure easy organization and access across devices. SQL database stores data securely with validation and error handling.</p>
+
+                <h3>Scenario:</h3>
+                <p>User registers, logs in, and creates a healthy breakfast smoothie recipe with ingredients and steps. They can view, edit, or delete recipes, sort by category, and filter by ingredients. An admin manages user accounts and monitors the recipe database.</p>
+
+                <h3>Key Features:</h3>
+                <ul>
+                    <li>User Authentication: Allow users to register and log in securely.</li>
+                    <li>Task Management: Users can view, add, edit, and delete recipes with details.</li>
+                    <li>Sorting and Filtering: Implement options for sorting and filtering recipes.</li>
+                    <li>Responsive Design: Ensure the application works well on various devices.</li>
+                    <li>Database Integration: Use MySQL to store user information and recipe data.</li>
+                    <li>Validation and Error Handling: Ensure data integrity and display meaningful error messages.</li>
+                    <li>User-Friendly Interface: Design an intuitive and user-friendly interface.</li>
+                </ul>
+
+                <h3>Technologies:</h3>
+                <p>HTML, CSS, JavaScript, PHP, and SQL</p>
+            </div>
+        </section>
+
+        <section id="user-manual">
+            <button class="accordion">User Manual for Healthy Recipe Management System</button>
+            <div class="panel">
+                <h3>Getting Started</h3>
+                <ol>
+                    <li>Open the web application in your browser.</li>
+                    <li>Register a new account or log in if you already have one.</li>
+                </ol>
+
+                <h3>Managing Recipes</h3>
+                <ol>
+                    <li>To create a new recipe, click on the "Add Recipe" button.</li>
+                    <li>Fill in the recipe details including title, category, ingredients, and steps.</li>
+                    <li>Click "Save" to add the recipe to your collection.</li>
+                </ol>
+
+                <h3>Viewing and Editing Recipes</h3>
+                <ol>
+                    <li>To view your recipes, navigate to the "My Recipes" section.</li>
+                    <li>Click on a recipe title to view details.</li>
+                    <li>To edit a recipe, click on the "Edit" button, make changes, and save.</li>
+                </ol>
+
+                <h3>Deleting Recipes</h3>
+                <ol>
+                    <li>In the "My Recipes" section, click the "Delete" button next to the recipe you want to remove.</li>
+                </ol>
+
+                <h3>Sorting and Filtering Recipes</h3>
+                <ol>
+                    <li>Use the sorting and filtering options in the "My Recipes" section to organize your recipes.</li>
+                </ol>
+
+                <h3>Admin Panel</h3>
+                <ol>
+                    <li>Log in as an admin to access the admin panel.</li>
+                    <li>Manage user accounts and monitor the recipe database.</li>
+                </ol>
+
+                <h3>Troubleshooting</h3>
+                <p>If you encounter any issues, contact support at support@healthyrecipes.com.</p>
+            </div>
+        </section>
+
+        <section id="report">
+            <button class="accordion">Report's List of Contents</button>
+            <div class="panel">
+                <ul>
+                    <li>Project Overview</li>
+                    <li>Tools & Technology</li>
+                    <li>System Modules</li>
+                    <li>Module Functionality</li>
+                    <li>Database Design</li>
+                    <li>SQL Instructions</li>
+                    <li>User Manual</li>
+                    <li>Additional Documents</li>
+                </ul>
+
+                <h3>Project Overview</h3>
+                <p>Brief description of the Web-based Healthy Recipe Management System.</p>
+
+                <h3>Tools & Technology</h3>
+                <p>List of technologies used (HTML, CSS, JavaScript, PHP, SQL). Explanation of why each technology was chosen.</p>
+
+                <h3>System Modules</h3>
+                <p>Detailed description of each system module (User Authentication, Recipe Management, Admin Panel, etc.).</p>
+
+                <h3>Module Functionality</h3>
+                <p>Explanation of what each module does.</p>
+
+                <h3>Database Design</h3>
+                <p>Include ERD (Entity Relationship Diagram). Use-case and activity diagrams if applicable.</p>
+
+                <h3>SQL Instructions</h3>
+                <p>Instructions for creating tables, inserting data, etc. Sample data and example scenarios with SQL queries.</p>
+
+                <h3>User Manual</h3>
+                <p>Step-by-step guide on how to use the system. Include screenshots and explanations.</p>
+
+                <h3>Additional Documents</h3>
+                <p>Presentation slides. URL links for project access. User login and password for system access.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 AE. All rights reserved.</p>
+    </footer>
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
+</html>

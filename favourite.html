@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favourite Recipes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style="background-image: url('7.png'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
+    <?php include('header.php'); ?>
+    <main>
+        <h1 style="color: rgb(77, 37, 126); background-color: #f6926b; font-family: 'Comic Sans MS', cursive, sans-serif; display: inline-block; padding: 10px; border-radius: 25px;">Favourite Recipes</h1>
+        <div id="favourite-recipes">
+            <!-- Placeholder for favourite recipes -->
+        </div>
+        <a href="my_recipes.html" class="btn">Back to My Recipes</a>
+    </main>
+    <?php include('footer.php'); ?>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loadFavouriteRecipes = () => {
+                fetch('get_favourites.php')
+                    .then(response => response.json())
+                    .then(favourites => {
+                        const favouritesContainer = document.getElementById('favourite-recipes');
+                        favouritesContainer.innerHTML = '';
+                        favourites.forEach(recipe => {
+                            const recipeCard = document.createElement('div');
+                            recipeCard.className = 'recipe-card';
+
+                            const title = document.createElement('h2');
+                            title.textContent = recipe.title;
+
+                            const category = document.createElement('p');
+                            category.textContent = `Category: ${recipe.category}`;
+
+                            const ingredients = document.createElement('p');
+                            ingredients.textContent = `Ingredients: ${recipe.ingredients}`;
+
+                            const steps = document.createElement('p');
+                            steps.textContent = `Steps: ${recipe.steps}`;
+
+                            const unfavouriteButton = document.createElement('button');
+                            unfavouriteButton.className = 'btn';
+                            unfavouriteButton.textContent = 'Remove from Favourites';
+                            unfavouriteButton.addEventListener('click', () => {
+                                fetch('unfavourite_recipe.php', {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json'
+                                    },
+                                    body: JSON.stringify({ recipeId: recipe.id })
+                                })
+                                .then(response => response.json())
+                                .then(data => {
+                                    if (data.success) {
+                                        loadFavouriteRecipes(); // Reload favourites after removing one
+                                    } else {
+                                        alert('Failed to remove from favourites: ' + data.error);
+                                    }
+                                })
+                                .catch(error => {
+                                    console.error('There was a problem with the fetch operation:', error);
+                                });
+                            });
+
+                            recipeCard.appendChild(title);
+                            recipeCard.appendChild(category);
+                            recipeCard.appendChild(ingredients);
+                            recipeCard.appendChild(steps);
+                            recipeCard.appendChild(unfavouriteButton);
+
+                            favouritesContainer.appendChild(recipeCard);
+                        });
+                    })
+                    .catch(error => {
+                        console.error('Fetch error:', error);
+                    });
+            };
+
+            // Load favourite recipes on page load
+            loadFavouriteRecipes();
+        });
+    </script>
+</body>
+</html>
